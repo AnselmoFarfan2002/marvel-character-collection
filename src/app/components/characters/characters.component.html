@@ -1,0 +1,16 @@
+<div class="w-full h-full rounded overflow-hidden shadow-lg flex flex-col">
+    <img class="w-full aspect-square" [ngSrc]="character.thumbnail.path + '.' + character.thumbnail.extension"
+        width="500" height="500">
+    <div class="flex flex-col flex-1">
+        <div class="px-6 py-4 flex-1">
+            <div class="font-bold text-lg mb-2">{{ character.name }}</div>
+            <p class="text-gray-700 text-sm">
+                {{ character.description === "" ? "No description avaible" : character.description }}
+            </p>
+        </div>
+        <div class="px-6 pt-4 pb-4">
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full">More
+                details</button>
+        </div>
+    </div>
+</div>
