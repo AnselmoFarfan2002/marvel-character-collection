@@ -1,12 +1,12 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Character } from '../../models/Character';
 import { NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-characters',
+  selector: 'card-characters',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, RouterLink],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css',
 })

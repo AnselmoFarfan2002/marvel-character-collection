@@ -1,0 +1,70 @@
+<div class="grid sm:grid-cols-12 max-w-7xl mx-auto p-6 gap-5">
+    <div class="col-span-12 sm:col-span-4">
+        <div class="flex flex-col gap-4">
+            <img class="aspect-square w-full" [ngSrc]="character.thumbnail.path + '.' + character.thumbnail.extension"
+                width="305" height="305" [alt]="character.name" priority="1">
+            <p class="text-2xl font-bold text-gray-600">{{character.name}}</p>
+            <p class="text-md text-gray-600 leading-8">{{character.description || "No description avaible"}}</p>
+        </div>
+    </div>
+    <div class="col-span-12 sm:col-span-8">
+        <div>
+            <div class="text-2xl font-bold text-gray-600 mb-3 flex gap-2 align-middle">
+                <div>Comics</div>
+                <span
+                    class="inline-flex items-center rounded-md bg-grey-50 px-2 py-1 text-xs font-medium text-grey-700 ring-1 ring-inset ring-grey-600/20">{{character.comics.available}}</span>
+            </div>
+        </div>
+        <div>
+            <span *ngFor="let item of character.comics.items"
+                class="p-1 mb-2 mr-2 lowercase inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">{{item.name}}</span>
+            <span *ngIf="character.comics.returned < character.comics.available"
+                class="p-1 mb-2 mr-2 lowercase inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">•••</span>
+        </div>
+
+        <div>
+            <div class="text-2xl font-bold text-gray-600 my-3 flex gap-2 align-middle">
+                <div>Series</div>
+                <span
+                    class="inline-flex items-center rounded-md bg-grey-50 px-2 py-1 text-xs font-medium text-grey-700 ring-1 ring-inset ring-grey-600/20">{{character.series.available}}</span>
+            </div>
+        </div>
+        <div>
+            <span *ngFor="let item of character.series.items"
+                class="p-1 mb-2 mr-2 lowercase inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">{{item.name}}</span>
+            <span *ngIf="character.series.returned < character.series.available"
+                class="p-1 mb-2 mr-2 lowercase inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">•••</span>
+        </div>
+
+        <div>
+            <div class="text-2xl font-bold text-gray-600 my-3 flex gap-2 align-middle">
+                <div>Stories</div>
+                <span
+                    class="inline-flex items-center rounded-md bg-grey-50 px-2 py-1 text-xs font-medium text-grey-700 ring-1 ring-inset ring-grey-600/20">{{character.stories.available}}</span>
+            </div>
+        </div>
+        <div>
+            <span *ngFor="let item of character.stories.items"
+                class="p-1 mb-2 mr-2 lowercase inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">{{item.name}}</span>
+            <span *ngIf="character.stories.returned < character.stories.available"
+                class="p-1 mb-2 mr-2 lowercase inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">•••</span>
+        </div>
+
+        <div>
+            <div class="text-2xl font-bold text-gray-600 my-3 flex gap-2 align-middle">
+                <div>Events</div>
+                <span
+                    class="inline-flex items-center rounded-md bg-grey-50 px-2 py-1 text-xs font-medium text-grey-700 ring-1 ring-inset ring-grey-600/20">{{character.events.available}}</span>
+            </div>
+        </div>
+        <div>
+            <span *ngFor="let item of character.events.items"
+                class="p-1 mb-2 mr-2 lowercase inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">{{item.name}}</span>
+            <span *ngIf="character.events.returned < character.events.available"
+                class="p-1 mb-2 mr-2 lowercase inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">•••</span>
+        </div>
+    </div>
+    <div class="col-span-12 text-center">
+        <a class="text-slate-500 hover:text-slate-900" href="http://marvel.com\" target="_blank">{{attributionText}}</a>
+    </div>
+</div>

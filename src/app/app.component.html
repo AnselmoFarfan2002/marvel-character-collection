@@ -1,7 +1,4 @@
-<main class="p-8">
-  <div class="text-center mt-[2em] mb-3 font-bold capitalize text-3xl">Marvel character collection</div>
-  <div class="text-center mb-[3em] capitalize text-xl">A collection provided by &#64;Marvel</div>
-  <div class="mx-auto max-w-7xl grid sm:grid-cols-12 gap-5 gap-y-8 max-h-content">
-    <app-characters class="lg:col-span-3 md:col-span-4 sm:col-span-6  h-full" [character]="character" *ngFor="let character of characters"></app-characters>
-  </div>
+<app-navbar></app-navbar>
+<main class="pt-20">
+    <router-outlet></router-outlet>
 </main>
